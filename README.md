@@ -35,7 +35,7 @@ build && build run
 - Signed and unsigned integers up to 64-bit to binary, decimal and hexadecimal ASCII strings, including from a pre-determined count of numerals
   - Capital letters are used when writing hexadecimal strings
 - 32-bit floating point numbers to binary, decimal and hexadecimal ASCII strings, including from a pre-determined count of numerals or a pre-determined minimum integer part size and fixed fractional part size, with a few particularities:
-  - Values outside of [-2^32 + 1, 2^32 - 1] are converted to string `-big` or `big`, depending on their sign (see rational in `f32_number_to_dec_str` comments, in [to_dec_str.h](to_dec_str.h))
+  - Values outside of [-2^32 + 1, 2^32 - 1] are converted to string `-big` or `big`, depending on their sign (see rational in `f32_number_to_dec_str` comments, in [to_dec_str.c](https://github.com/badsami/str_conv/blob/main/to_dec_str.c#L218))
   - `"-qnan"`, `"qnan"`, `"-snan"`, `"snan"`, `"-inf"` or `"inf"` may be output for matching non-number values
   - `-0` will be converted to `"0"`
   - By default, 6 digits past the period are written to the output string. This can be increased up to 9 (see `F32_DEC_FRAC_DEFAULT_STR_SIZE` and `F32_DEC_FRAC_MULT` in [types_max_str_size.h](types_max_str_size.h))
