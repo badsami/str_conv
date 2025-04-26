@@ -5,7 +5,7 @@ Integers and 32-bit floating-point numbers conversion functions to and from stri
 #include "to_dec_str.h"
 #include <Windows.h>
 
-void print_numbers(HANDLE* output, schar8* output_buffer, f32* numbers, u32 numbers_count)
+void print_numbers(HANDLE output, schar8* output_buffer, f32* numbers, u32 numbers_count)
 {
   schar8* begin = output_buffer;
   schar8* end   = output_buffer;

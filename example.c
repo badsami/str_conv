@@ -5,7 +5,7 @@
 
 s32 _fltused;
 
-void print_numbers(HANDLE* output, schar8* output_buffer, f32* numbers, u32 numbers_count)
+void print_numbers(HANDLE output, schar8* output_buffer, f32* numbers, u32 numbers_count)
 {
   schar8* begin = output_buffer;
   schar8* end   = output_buffer;
@@ -27,13 +27,13 @@ void mainCRTStartup()
 {
   // Prepare the output to print to (console)
   AttachConsole(ATTACH_PARENT_PROCESS);
-  HANDLE* output = CreateFileA("CONOUT$",
-                               GENERIC_WRITE,
-                               FILE_SHARE_READ | FILE_SHARE_WRITE,
-                               0,
-                               OPEN_EXISTING,
-                               0,
-                               0);
+  HANDLE output = CreateFileA("CONOUT$",
+                              GENERIC_WRITE,
+                              FILE_SHARE_READ | FILE_SHARE_WRITE,
+                              0,
+                              OPEN_EXISTING,
+                              0,
+                              0);
 
   // Generate some demonstration values
   volatile f32 nzero = -0.f;
